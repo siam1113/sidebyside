@@ -87,7 +87,7 @@ REMOTE_BUILD
 
 echo "==> building sandbox Docker image"
 ssh "${SSH_OPTS[@]}" "$REMOTE" \
-  "cd $REMOTE_APP_DIR/docker && docker build -t sidebyside-sandbox -f sandbox.Dockerfile ."
+  "cd $REMOTE_APP_DIR/docker && docker build -t ai-gateway-sandbox:latest -f sandbox.Dockerfile ."
 
 echo "==> installing systemd unit"
 ssh "${SSH_OPTS[@]}" "$REMOTE" bash -s <<REMOTE_SYSTEMD

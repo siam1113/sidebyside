@@ -78,8 +78,8 @@ npm install
 
 if [[ "$docker_ready" == true ]]; then
   echo ""
-  echo "==> Building the sandbox image (sidebyside-sandbox)"
-  docker build -t sidebyside-sandbox -f docker/sandbox.Dockerfile docker/
+  echo "==> Building the sandbox image (ai-gateway-sandbox:latest)"
+  docker build -t ai-gateway-sandbox:latest -f docker/sandbox.Dockerfile docker/
 fi
 
 echo ""
