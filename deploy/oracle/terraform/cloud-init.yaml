@@ -1,0 +1,15 @@
+#cloud-config
+package_update: true
+
+packages:
+  - docker.io
+  - git
+  - ufw
+
+runcmd:
+  - systemctl enable --now docker
+  - usermod -aG docker ubuntu
+  - ufw allow OpenSSH
+  - ufw allow 80/tcp
+  - ufw allow 443/tcp
+  - ufw --force enable

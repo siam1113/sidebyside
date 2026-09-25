@@ -1,0 +1,11 @@
+# Interactive prompt for the AI Gateway Sandbox shell. Loaded directly via
+# `bash --rcfile` (see entrypoint.sh) so it can't be silently overridden by
+# Debian's stock /etc/skel ~/.bashrc / ~/.profile chain.
+export TERM="${TERM:-xterm-256color}"
+
+# cyan "sandbox", dim cwd, cyan $ -- matches the app's terminal accent color.
+export PS1='\[\e[1;36m\]sandbox\[\e[0m\] \[\e[2m\]\w\[\e[0m\] \[\e[1;36m\]$\[\e[0m\] '
+
+alias ls='ls --color=auto'
+alias ll='ls -alF --color=auto'
+alias grep='grep --color=auto'
